@@ -10,23 +10,30 @@ public class SetPractice {
        // setOpr();
         //hashSetOpr();
         //treeSetOpr();
-        linkedHashSet();
-
+       // linkedHashSet();
+        listToSet();
     }
 
-    private static void linkedHashSet() {
+    private static void listToSet(){
 
-        LinkedHashSet<String>list = new LinkedHashSet<>();
-        list.add("First");
-        list.add("Second");
-        list.add("Third");
-        list.add("Fourth");
-        list.add("First");
-        list.add(null);
-        list.add(null);
+        List<String>list = ArrayList.asList("first","second","third","fourth","first","third");
 
-        System.out.println(list);
+        list.stream().collect(Collectors.toSet(LinkedHashSet::new));
     }
+
+//    private static void linkedHashSet() {
+//
+//        LinkedHashSet<String>list = new LinkedHashSet<>();
+//        list.add("First");
+//        list.add("Second");
+//        list.add("Third");
+//        list.add("Fourth");
+//        list.add("First");
+//        list.add(null);
+//        list.add(null);
+//
+//        System.out.println(list);
+//    }
 
 //    private static void treeSetOpr() {
 //
