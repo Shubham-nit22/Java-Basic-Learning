@@ -5,6 +5,20 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+class Employee{
+
+    int id;
+    String name;
+    double salary;
+
+    class Employee(int id,String name, double salary){
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+}
+
+
 public class QueuePractice {
 
     public static void main(String[] args) {
@@ -12,8 +26,25 @@ public class QueuePractice {
 
         //queueLinkedListOpr();
         //queuePriorityQOpr();
-         
+         priorityQueueReverse();
     }
+
+    private static void priorityQueueReverse(){
+
+        PriorityQueue<Employee>pq = new PriorityQueue<>((e1,e2) -> e1.salary > e2.salary);
+        Employee e1 = new Employee(101,"Vikram",75024.25);
+        Employee e2 = new Employee(102,"Shashwat",64350.25);
+        Employee e3 = new Employee(103,"Vishesh",73250.25);
+        Employee e4 = new Employee(104,"Dinesh",71234.25);
+
+        pq.offer(e1);
+        pq.offer(e2);
+        pq.offer(e3);
+        pq.offer(e4);
+
+        pq.forEach(x -> System.out.println(x));
+    }
+
 
 //    private static void queuePriorityQOpr() {
 //
